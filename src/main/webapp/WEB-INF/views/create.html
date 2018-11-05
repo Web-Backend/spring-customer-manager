@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head">
+    <title>Add new customer</title>
+</head>
+<body>
+<p>
+    <a th:href="@{/}">Back to customer list</a>
+</p>
+<div id="form">
+    <form action="#" method="POST" th:action="@{/customer/save}" th:object="${customer}" novalidate="novalidate">
+        <input type="hidden" th:field="*{id}"/>
+        <div>
+            <label>Name</label>
+            <input type="text" th:field="*{name}">
+        </div>
+        <div>
+            <label>Email</label>
+            <input type="text" th:field="*{email}">
+        </div>
+        <div>
+            <label>Address</label>
+            <input type="text" th:field="*{address}">
+        </div>
+        <input type="submit" value="Save">
+    </form>
+</div>
+<footer th:replace="layout :: footer"></footer>
+</body>
+</html>
